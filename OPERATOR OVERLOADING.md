@@ -32,11 +32,43 @@ To write a Python program to perform division of two complex numbers using the b
 ### PROGRAM
 
 ```
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    # Overloading the division operator '/'
+    def __truediv__(self, other):
+        # Calculating the denominator: (c^2 + d^2)
+        denom = other.real**2 + other.imag**2
+        
+        # Calculating the real and imaginary parts of the result
+        real_part = (self.real * other.real + self.imag * other.imag) / denom
+        imag_part = (self.imag * other.real - self.real * other.imag) / denom
+        
+        # Returning a new Complex number as the result of division
+        return Complex(real_part, imag_part)
+
+    # To represent the complex number in a readable format
+    def __str__(self):
+        return f"{self.real} + {self.imag}i"
+
+# Creating two complex numbers Ob1 and Ob2
+Ob1 = Complex(10, 21)
+Ob2 = Complex(2, 3)
+
+# Performing division of Ob1 by Ob2
+result = Ob1 / Ob2
+
+# Displaying the result of the division
+print(f"({Ob1}) / ({Ob2}) = {result}")
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/084822ae-3dae-4882-be9a-a82328061b24)
 
 
 ### RESULT
+thus the program is executed successfully
 
