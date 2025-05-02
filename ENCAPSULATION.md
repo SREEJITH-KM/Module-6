@@ -26,14 +26,83 @@ To write a Python program to create a class `Student` with the private members `
 ### PROGRAM
 
 ```
+class Student:
+    def __init__(self, name, age):
+        """Initialize the Student with name and age."""
+        self.name = name
+        self._age = age  # Private variable with a leading underscore
+
+    # Getter method for age
+    def get_age(self):
+        return self._age
+
+    # Setter method for age
+    def set_age(self, age):
+        if age >= 0:
+            self._age = age
+        else:
+            print("Age cannot be negative.")
+
+    # Getter method for name (optional)
+    def get_name(self):
+        return self.name
+
+    # Setter method for name (optional)
+    def set_name(self, name):
+        self.name = name
+
+# Create a Student object
+student = Student("Alice", 20)
+
+# Get the name and age of the student
+print(f"Student Name: {student.get_name()}")
+print(f"Student Age: {student.get_age()}")
+
+# Modify the age using the setter method
+student.set_age(25)
+
+# Try setting an invalid age
+student.set_age(-5)
+
+# Get the updated age of the student
+print(f"Updated Student Age: {student.get_age()}")
+
 
 
 
 ```
 
 ### OUTPUT
+class Student:
+    def __init__(self, name, age):
+        """Initialize the Student with name and age."""
+        self.name = name
+        self._age = age  # Private variable with a leading underscore
+
+    # Getter method for age
+    def get_age(self):
+        return self._age
+
+    # Setter method for age
+    def set_age(self, age):
+        if age >= 0:
+            self._age = age
+        else:
+            print("Age cannot be negative.")
+
+    # Getter method for name (optional)
+    def get_name(self):
+        return self.name
+
+    # Setter method for name (optional)
+    def set_name(self, name):
+        self.name = name
+### OUTPUT
+![image](https://github.com/user-attachments/assets/bcb52821-a525-44e6-8d18-9d4b12a40a34)
+
 
 
 ### RESULT
+thus thr program is executed successfully
 
 
