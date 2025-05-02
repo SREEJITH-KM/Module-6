@@ -103,6 +103,6 @@ class Student:
 
 
 ### RESULT
-thus thr program is executed successfully
+thus the program is executed successfully
 
 
