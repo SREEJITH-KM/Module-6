@@ -34,11 +34,54 @@ To write a Python program to define the abstract base class named `Polygon` and 
 ### PROGRAM
 
 ```
+from abc import ABC, abstractmethod
+
+# Abstract base class
+class Polygon(ABC):
+    @abstractmethod
+    def sides(self):
+        pass
+
+# Subclass representing a Triangle
+class Triangle(Polygon):
+    def sides(self):
+        return 3  # A triangle has 3 sides
+
+# Subclass representing a Rectangle
+class Rectangle(Polygon):
+    def sides(self):
+        return 4  # A rectangle has 4 sides
+
+# Subclass representing a Square
+class Square(Rectangle):  # Square is a type of Rectangle
+    def sides(self):
+        return 4  # A square has 4 sides
+
+# Subclass representing a Pentagon
+class Pentagon(Polygon):
+    def sides(self):
+        return 5  # A pentagon has 5 sides
+
+# Create objects of the subclasses
+triangle = Triangle()
+rectangle = Rectangle()
+square = Square()
+pentagon = Pentagon()
+
+# Call the sides() method
+print(f"Triangle has {triangle.sides()} sides.")
+print(f"Rectangle has {rectangle.sides()} sides.")
+print(f"Square has {square.sides()} sides.")
+print(f"Pentagon has {pentagon.sides()} sides.")
+
 
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/806f6c3e-3967-4e4a-9ed5-ef6b1aaec9f1)
+
 
 
 ### RESULT
+thus the program is executed successfully
